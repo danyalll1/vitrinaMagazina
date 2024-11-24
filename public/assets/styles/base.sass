@@ -1,0 +1,40 @@
+@use "mixins/breakpoint_mixins" as *
+@use "vars/vars" as *
+
+*
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+  border: 0
+  -webkit-tap-highlight-color: transparent
+  -moz-tap-highlight-color: transparent
+  outline: none
+  +text-body-l()
+  font-style: normal
+
+nav,
+footer,
+header,
+aside,
+a
+  display: block
+  &:visited
+    color: inherit
+
+a
+  text-decoration: none
+
+body
+  &.fixed
+    overflow: hidden
+
+.container
+  max-width: 1280px
+  padding: 0 28px
+  margin: 0 auto
+  @include xs-breakpoint()
+    padding: 0 16px
+
+.icon
+  width: 24px
+  height: 24px

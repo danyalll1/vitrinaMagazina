@@ -1,0 +1,19 @@
+@use "../vars/vars" as *
+
+@mixin lg-breakpoint()
+  @media only screen and (max-width: $lgBreakpoint)
+    @content
+
+@mixin md-breakpoint()
+  @media only screen and (max-width: $mdBreakpoint)
+    @content
+
+@mixin xs-breakpoint()
+  @media only screen and (max-width: $xsBreakpoint)
+    @content
+
+@mixin screen($screen-width)
+  @media only screen and (max-width: $screen-width)
+    @content
+
+

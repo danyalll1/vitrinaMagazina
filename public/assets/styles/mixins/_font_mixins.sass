@@ -1,0 +1,66 @@
+@use "../vars/vars" as *
+@use "./breakpoint_mixins" as *
+
+@mixin fontFamily($_family, $_name, $_weight, $_style: normal)
+  font-family: '#{$_family}'
+  src: local('#{$_name}')
+  src: url('/assets/fonts/#{$_name}.woff2') format('woff2'),  url('/assets/fonts#{$_name}.woff') format('woff')
+  font-weight: $_weight
+  font-style: $_style
+  font-display: swap
+
+@mixin font($_fontSize, $_lineHeight, $_fontWeight: 400, $_fontFamily: $font)
+  font-weight: $_fontWeight
+  font-size: $_fontSize
+  line-height: $_lineHeight
+  font-family: $_fontFamily
+
+@mixin text-body-l($_fontFamily: $font)
+  +font(16px, 22px, 400, $_fontFamily)
+  letter-spacing: -0.064px
+
+@mixin text-body-l-strong($_fontFamily: $font)
+  +font(16px, 20px, 700, $_fontFamily)
+  letter-spacing: -0.128px
+
+@mixin text-body-m($_fontFamily: $font)
+  +font(14px, 20px, 400, $_fontFamily)
+  letter-spacing: -0.042px
+
+@mixin text-body-m-strong($_fontFamily: $font)
+  +font(14px, 20px, 600, $_fontFamily)
+  letter-spacing: -0.21px
+
+@mixin text-body-s($_fontFamily: $font)
+  +font(12px, 16px, 400, $_fontFamily)
+
+@mixin text-body-s-strong($_fontFamily: $font)
+  +font(12px, 16px, 600, $_fontFamily)
+
+@mixin text-body-extrasmall($_fontFamily: $font)
+  +font(10px, 12px, 400, $_fontFamily)
+
+@mixin text-heading1($_fontFamily: $font2)
+  font-variant-numeric: tabular-nums
+  +font(44px, 52px, 700, $_fontFamily)
+  +md-breakpoint
+    +font(30px, 36px, 700, $_fontFamily)
+
+@mixin text-heading2($_fontFamily: $font2)
+  font-variant-numeric: tabular-nums
+  +font(34px, 44px, 700, $_fontFamily)
+  +md-breakpoint
+    +font(26px, 32px, 700, $_fontFamily)
+
+@mixin text-heading3($_fontFamily: $font2)
+  font-variant-numeric: tabular-nums
+  +font(28px, 36px, 700, $_fontFamily)
+  +md-breakpoint
+    +font(22px, 28px, 700, $_fontFamily)
+
+@mixin text-heading4($_fontFamily: $font2)
+  font-variant-numeric: tabular-nums
+  +font(22px, 28px, 700, $_fontFamily)
+  +md-breakpoint
+    +font(19px, 22px, 700, $_fontFamily)
+
