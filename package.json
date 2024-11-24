@@ -1,10 +1,24 @@
 {
-  "name": "${PROJECT_NAME}",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "nuxt build",
+    "dev": "nuxt dev --host",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
-  "private": true
+  "dependencies": {
+    "@pinia/nuxt": "^0.7.0",
+    "nuxt": "^3.13.2",
+    "pinia": "^2.2.6",
+    "vue": "3.5.12",
+    "vue-router": "latest",
+    "vue-yandex-maps": "^2.1.4"
+  },
+  "devDependencies": {
+    "sass": "^1.80.5",
+    "typescript": "^5.6.3"
+  }
 }

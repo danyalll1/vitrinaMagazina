@@ -1,9 +1,7 @@
-import { createResolver } from '@nuxt/kit'
-
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: '2024-11-03',
   devtools: { enabled: true },
-  modules: [],
+  modules: ['@pinia/nuxt'],
   css: [
     '~/public/assets/styles/base.sass',
     '~/public/assets/styles/fonts.sass',
@@ -26,14 +24,10 @@ export default defineNuxtConfig({
       }
     }
   },
-  hooks: {
-    'pages:routerOptions' ({ files }) {
-      const resolver = createResolver(import.meta.url)
-      // add a route
-      files.push({
-        path: resolver.resolve('./app/router-options.ts'),
-        optional: true
-      })
-    }
+  routeRules:{
+    '/': { swr: true },
+    '/product/**' : { ssr: true},
+    "/contacts": {static: true},
+
   }
 })

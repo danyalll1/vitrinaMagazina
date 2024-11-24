@@ -1,3 +1,3 @@
 import { apiService } from "./api";
-const api = new apiService('https://api.corp.sotrans.ru/api/bereit')
+const api = new apiService('https://fakestoreapi.com/')
 export { api }

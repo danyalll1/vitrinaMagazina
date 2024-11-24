@@ -1,6 +1,7 @@
 <script setup lang="ts">
 defineProps<{
   link?: string
+  target?:  string | '_blank'
 }>()
 </script>
 
@@ -13,6 +14,8 @@ defineProps<{
   </button>
   <NuxtLink
       class="app-button"
+      :target="target"
+      :to="link"
       v-else
   >
     <slot/>
@@ -21,12 +24,21 @@ defineProps<{
 
 <style lang="sass" scoped>
 .app-button
-  transition: background ease 0.3s
-  padding: 16px
-  border-radius: 12px
+  transition: all ease 0.3s
+  padding: 12px
+  border-radius: 8px
   display: flex
   align-items: center
-  +text-body-l-strong
+  background-color: var(--brand-blue)
+  color: var(--fg-white)
+  +text-body-m()
+  cursor: pointer
+  border: solid 2px transparent
+
+  &:hover
+    background-color: var(--fg-white)
+    color: var(--brand-blue)
+    border-color: var(--brand-blue)
 
 
 </style>

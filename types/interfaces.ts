@@ -2,13 +2,17 @@ interface IProduct {
     id: number;
     title: string;
     price: number;
-    description: string;
+    description?: string;
     category: string;
     image: string;
-    rating: {
+    rating?: {
         rate: number;
         count: number;
     };
 }
 
-export type { IProduct }
+interface ICart {
+    [id: number]: { product: IProduct; quantity: number };
+}
+
+export type { IProduct, ICart }

@@ -1,33 +1,25 @@
 <script setup lang="ts">
-
-
+import Header from "~/components/layoutComponents/header.vue";
+import Footer from "~/components/layoutComponents/footer.vue";
 </script>
 
 <template>
-  <DefaultHeader
-      :burgerActive="burgerActive"
-      @toggleBurger="toggleBurger"
-      class="header"
-  />
-
+  <Header/>
   <main class="main">
     <slot/>
   </main>
-  <DefaultFooter/>
+  <Footer/>
 </template>
 
 <style lang="sass" scoped>
 .main
   width: 100%
   min-height: 100vh
-  padding-top: 124px
+  padding-top: 104px
+  padding-bottom: 64px
   +md-breakpoint
-    padding-top: 64px
-
-  &__bread-crumbs
-    padding-top: 40px
-    +md-breakpoint
-      padding-top: 20px
+    padding-top: 88px
+    padding-bottom: 40px
 
 .header
   z-index: 100
@@ -35,9 +27,5 @@
   top: 0
   left: 0
   width: 100%
-
-.modalAnker
-  position: fixed
-  z-index: 2000
 
 </style>
